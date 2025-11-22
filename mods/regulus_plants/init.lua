@@ -206,9 +206,7 @@ math.randomseed()
 
 regulus_plants.get_plant_composition = function(nodename)
 	local plantid = string.sub(nodename, #"regulus_plants:plant_" + 1)
-	core.debug("get_plant_composition", plantid)
 	if regulus_plants.plantdefs[plantid] then
-		core.debug(dump(regulus_plants.plantdefs[plantid].composition))
 		return regulus_plants.plantdefs[plantid].composition or {}
 	else
 		return {}

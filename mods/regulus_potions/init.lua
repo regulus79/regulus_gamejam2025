@@ -37,8 +37,6 @@ regulus_potions.potions = {
 
 regulus_potions.drink_solution = function(player, solution_state)
 	local potion_levels = core.deserialize(player:get_meta():get_string("potion_levels"))
-	core.debug("Drink!", dump(potion_levels))
-	core.debug(dump(potion_levels), dump(solution_state))
 	for compound, amount in pairs(solution_state) do
 		if regulus_potions.potions[compound] then
 			potion_levels[compound] = (potion_levels[compound] or 0) + amount

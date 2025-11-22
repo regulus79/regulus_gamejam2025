@@ -22,15 +22,12 @@ regulus_dialogue.start_dialogue = function(player, dialogue_id)
 end
 
 core.register_on_player_receive_fields(function(player, formname, fields)
-	core.debug(formname, dump(fields))
 	if not string.sub(formname, 1, #"dialogue_") == "dialogue_" then
 		return
 	end
 	local dialogue_id_and_index = string.sub(formname, #"dialogue_" + 1)
 	local dialogue_id, index = unpack(string.split(dialogue_id_and_index, "_line_"))
 	index = tonumber(index)
-	core.debug(dialogue_id_and_index)
-	core.debug(dialogue_id, index)
 	local dialogue_def = regulus_dialogue.dialogues[dialogue_id]
 	if not dialogue_def then
 		return

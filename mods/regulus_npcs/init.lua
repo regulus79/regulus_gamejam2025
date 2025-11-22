@@ -50,7 +50,6 @@ for name, npcdef in pairs(regulus_npcs.npcs) do
 
 		on_activate = function(self)
 			if #self.object:get_children() == 0 then
-				core.debug("no kids")
 				local infoicon = core.add_entity(self.object:get_pos() + vector.new(0, 4, 0), "regulus_npcs:info")
 				infoicon:set_attach(self.object, nil, vector.new(0, 15, 0))
 			end

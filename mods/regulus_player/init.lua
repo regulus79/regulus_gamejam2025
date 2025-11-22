@@ -44,7 +44,6 @@ local update_biome_sky = function(player)
 	local light = biomedef.nightlight + (core.time_to_day_night_ratio(core.get_timeofday())) * (biomedef.daylight - biomedef.nightlight)
 	-- and lerp from old to new
 	local old_light = player:get_day_night_ratio() or light
-	core.debug(old_light + 0.2 * (light - old_light))
 	player:override_day_night_ratio(old_light + 0.2 * (light - old_light))
 end
 
