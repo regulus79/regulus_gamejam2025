@@ -1,8 +1,8 @@
+<img src="menu/header.png?raw=true" alt="The Forests Logo" style="width: 100%; image-rendering: pixelated;">
+
 # The Forests
 
 Regulus' Submission to the 2025 Luanti Game Jam
-
-<img src="menu/header.png?raw=true" alt="The Forests Logo" style="width: 100%; image-rendering: pixelated;">
 
 ## This game is WIP!
 

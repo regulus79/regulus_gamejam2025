@@ -105,8 +105,8 @@ for _, path in pairs(pathdefs) do
 	for i = 1, #path.points - 1 do
 		table.insert(map_parameters.paths, {
 			radius = path.radius,
-			node = path.node or "regulus_nodes:path",
-			halfheight_node = path.halfheight_node or "regulus_nodes:path_slab",
+			node = path.node or "tf_nodes:path",
+			halfheight_node = path.halfheight_node or "tf_nodes:path_slab",
 			noise = path.noise,
 			startpos = path.points[i],
 			endpos = path.points[i+1],
@@ -123,100 +123,100 @@ map_parameters.level_grounds = {
 		pos = grassland_center,
 		radius = 10,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass1"
+		node = "tf_nodes:dirt_with_grass1"
 	},
 	{ -- Fork in the road
 		pos = fork_in_road,
 		radius = 10,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass1"
+		node = "tf_nodes:dirt_with_grass1"
 	},
 	{ -- Npc house
 		pos = npc_house,
 		radius = 10,
 		interpolation_length = 30,
-		node = "regulus_nodes:dirt_with_grass1"
+		node = "tf_nodes:dirt_with_grass1"
 	},
 	{ -- backyardforest place
 		pos = backyardforest_center,
 		radius = 10,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass4"
+		node = "tf_nodes:dirt_with_grass4"
 	},
 	{ -- redforest place
 		pos = redforest_center,
 		radius = 10,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass5"
+		node = "tf_nodes:dirt_with_grass5"
 	},
 	{ -- drygrassland place
 		pos = drygrassland_center,
 		radius = 10,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass2"
+		node = "tf_nodes:dirt_with_grass2"
 	},
 	{ -- place for npc in front of fireflyforest
 		pos = in_front_of_fireflyforest,
 		radius = 1,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass2"
+		node = "tf_nodes:dirt_with_grass2"
 	},
 	{ -- Fireflyforest place
 		pos = fireflyforest_center,
 		radius = 10,
 		interpolation_length = 50,
-		node = "regulus_nodes:dirt_with_grass3"
+		node = "tf_nodes:dirt_with_grass3"
 	},
 }
 
 
 local special_nodes = {
 	{-- Scarecrow
-		name = "regulus_npcs:spawner_scarecrow1",
+		name = "tf_npcs:spawner_scarecrow1",
 		pos = grassland_center + vector.new(0, 1, 8),
 	},
 	{ -- Barrel of grassland speed potion near spawn
-		name = "regulus_potions:vessel_spawner_affer",
+		name = "tf_potions:vessel_spawner_affer",
 		pos = grassland_center + vector.new(-4, 1, 8),
 	},
 	{ -- Mound at fork
-		name = "regulus_npcs:spawner_npc5",
+		name = "tf_npcs:spawner_npc5",
 		pos = fork_in_road + vector.new(0,1,0),
 	},
 	{ -- Barrel of grassland jump potion near fork
-		name = "regulus_potions:vessel_spawner_gra",
+		name = "tf_potions:vessel_spawner_gra",
 		pos = fork_in_road + vector.new(-2, 1, 0),
 	},
 	{ -- Barrel of grassland agility potion near fork
-		name = "regulus_potions:vessel_spawner_phye",
+		name = "tf_potions:vessel_spawner_phye",
 		pos = fork_in_road + vector.new(-2, 1, 1),
 	},
 	{ -- idk guy
-		name = "regulus_npcs:spawner_wizard",
+		name = "tf_npcs:spawner_wizard",
 		pos = npc_house + vector.new(0, 1, 0),
 	},
 	{ -- Barrel
-		name = "regulus_vessels:barrel1_level0",
+		name = "tf_vessels:barrel1_level0",
 		pos = npc_house + vector.new(5, 1, 3),
 	},
 	{ -- Barrel
-		name = "regulus_vessels:barrel2_level0",
+		name = "tf_vessels:barrel2_level0",
 		pos = npc_house + vector.new(4, 1, 3),
 	},
 	{ -- Barrel
-		name = "regulus_vessels:barrel3_level0",
+		name = "tf_vessels:barrel3_level0",
 		pos = npc_house + vector.new(3, 1, 2),
 	},
 	{ -- Rock in backyardforest
-		name = "regulus_npcs:spawner_rock",
+		name = "tf_npcs:spawner_rock",
 		pos = backyardforest_center + vector.new(0, 1, 0),
 	},
 	{ -- Mound near fireflyforest
-		name = "regulus_npcs:spawner_npc2",
+		name = "tf_npcs:spawner_npc2",
 		pos = in_front_of_fireflyforest + vector.new(0, 1, 0),
 	},
 	{-- Other Scarecrow
-		name = "regulus_npcs:spawner_npc4",
+		name = "tf_npcs:spawner_npc4",
 		pos = fireflyforest_center + vector.new(0, 1, 0),
 	},
 }
