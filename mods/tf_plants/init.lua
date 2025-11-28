@@ -167,7 +167,7 @@ tf_plants.plantdefs = {
 		noise_offset = -0.3,
 		composition = {phye = 1},
 	},
-	flower3 = {
+	flower4 = {
 		name = "Orange Flower",
 		type = "simple",
 		biomes = {"backyardforest"},

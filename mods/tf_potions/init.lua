@@ -28,7 +28,7 @@ tf_potions.potion_effects = {
 	dizziness = {
 		name = "Dizziness",
 		update = function(player, intensity, dtime)
-			if intensity > 0 then
+			if intensity > 0.01 then
 				player:set_look_horizontal(player:get_look_horizontal() + (1 - 2*math.random()) * intensity)
 				player:set_look_vertical(player:get_look_vertical() + (1 - 2*math.random()) * intensity)
 			end
@@ -37,8 +37,19 @@ tf_potions.potion_effects = {
 	stumble = {
 		name = "Stumble",
 		update = function(player, intensity, dtime)
-			if intensity > 0 then
-				player:add_velocity(intensity * 5 * vector.new(1 - 2*math.random(), 1 - 2*math.random(), 1 - 2*math.random()))
+			if intensity > 0.01 then
+				player:add_velocity(intensity * 20 * vector.new(1 - 2*math.random(), 1 - 2*math.random(), 1 - 2*math.random()))
+			end
+		end
+	},
+	voices = {
+		name = "Voices",
+		update = function(player, intensity, dtime)
+			if intensity > 0.01 then
+				local probPerSec = math.exp(-1 / intensity)
+				if math.random() < 1 - (1 - probPerSec) ^ dtime then
+					tf_dialogue.start_dialogue(player, "potions_voices" .. math.random(1,10))
+				end
 			end
 		end
 	},
@@ -66,7 +77,56 @@ tf_potions.potion_effects = {
 			player:set_physics_override(physics_override)
 		end
 	},
+	daynight = {
+		name = "Sun and Moon",
+		update = function(player, intensity, dtime)
+			if intensity > 0.01 then
+				local probPerSec = math.exp(-1 / intensity)
+				if math.random() < 1 - (1 - probPerSec) ^ dtime then
+					core.set_timeofday((core.get_timeofday() + intensity * (0.5 - math.random())) % 1)
+					player:override_day_night_ratio(core.time_to_day_night_ratio(core.get_timeofday())) -- idk, not correct with the biomes, but just to get a change to happen
+				end
+			end
+		end
+	}
 }
+
+
+--
+-- Dialogue lines for the voices effect
+--
+tf_dialogue.dialogues["potions_voices1"] = {
+	{text = "yeah I mean that what is in the line"},
+}
+tf_dialogue.dialogues["potions_voices2"] = {
+	{text = "and then I think they mentioned we very in the homestead"},
+}
+tf_dialogue.dialogues["potions_voices3"] = {
+	{text = "hraugh is alive"},
+}
+tf_dialogue.dialogues["potions_voices4"] = {
+	{text = "that was, yes. I say so with certainty"},
+}
+tf_dialogue.dialogues["potions_voices5"] = {
+	{text = "in the same way that they did it did"},
+}
+tf_dialogue.dialogues["potions_voices6"] = {
+	{text = "beforehand. yes. green"},
+}
+tf_dialogue.dialogues["potions_voices7"] = {
+	{text = "where did you find it. i don't know. no"},
+}
+tf_dialogue.dialogues["potions_voices8"] = {
+	{text = "i can't remember all the words but i think it was"},
+}
+tf_dialogue.dialogues["potions_voices9"] = {
+	{text = "remember when"},
+}
+tf_dialogue.dialogues["potions_voices10"] = {
+	{text = "that's just because they left it behind when"},
+}
+
+
 
 
 -- Some compounds have special effects
@@ -92,7 +152,7 @@ tf_potions.potions = {
 	},
 	feyrf = {
 		halflife = 15,
-		effects = {speed = 1, sickness = 0.1}
+		effects = {sickness = 0.1, speed = 1}
 	},
 	bramrua = {
 		halflife = 15,
@@ -112,11 +172,11 @@ tf_potions.potions = {
 	},
 	thrag = {
 		halflife = 15,
-		effects = {sickness = 0.1}
+		effects = {sickness = 0.5}
 	},
 	rheer = {
 		halflife = 15,
-		effects = {sickness = 2}
+		effects = {sickness = 1}
 	},
 	vurg = {
 		halflife = 15,
@@ -124,15 +184,15 @@ tf_potions.potions = {
 	},
 	reghaou = {
 		halflife = 15,
-		effects = {jump = 1, sickness = 0.1}
+		effects = {sickness = 0.1, voices = 1}
 	},
 	gregoara = {
 		halflife = 15,
-		effects = {sickness = 0.1}
+		effects = {sickness = 0.1, speed = 2}
 	},
 	rhe = {
 		halflife = 15,
-		effects = {sickness = 0.1}
+		effects = {sickness = 0.1, daynight = 1}
 	},
 	affer = {
 		halflife = 15,
@@ -144,7 +204,7 @@ tf_potions.potions = {
 	},
 	phye = {
 		halflife = 15,
-		effects = {sickness = 2}
+		effects = {sickness = 1}
 	},
 	deem = {
 		halflife = 15,

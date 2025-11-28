@@ -22,7 +22,7 @@ core.register_biome({
 	fog_color = "#e7f0f0",
 	fog_distance = 100,
 	daylight = 1,
-	nightlight = 0.2,
+	nightlight = 0.4,
 })
 
 for i = 1, tf_nodes.num_boulders do
@@ -65,7 +65,7 @@ core.register_biome({
 	fog_color = "#f9eeae",
 	fog_distance = 100,
 	daylight = 1,
-	nightlight = 0.2,
+	nightlight = 0.4,
 })
 for i = 1, tf_nodes.num_boulders do
 	core.register_decoration({
@@ -105,7 +105,7 @@ core.register_biome({
 	fog_color = "#322f1f",
 	fog_distance = 40,
 	daylight = 0.5,
-	nightlight = 0.2,
+	nightlight = 0.4,
 })
 for i = 1, tf_nodes.num_boulders do
 	core.register_decoration({
@@ -146,7 +146,7 @@ core.register_biome({
 	fog_color = "#e7f0f0",
 	fog_distance = 100,
 	daylight = 1,
-	nightlight = 0.2,
+	nightlight = 0.4,
 })
 for i = 1, tf_nodes.num_boulders do
 	core.register_decoration({
@@ -166,7 +166,7 @@ core.register_ore({
 	ore = "tf_nodes:livingstone",
 	wherein = "tf_nodes:stone4",
 	biomes = {"backyardforest"},
-	clust_scarcity = 2*2*2,
+	clust_scarcity = 3*3*3,
 	clust_num_ores = 8,
 	clust_size = 3,
 })
@@ -199,7 +199,7 @@ core.register_biome({
 	fog_color = "#441f24",
 	fog_distance = 100,
 	daylight = 1,
-	nightlight = 0.2,
+	nightlight = 0.6,
 })
 for i = 1, tf_nodes.num_boulders do
 	core.register_decoration({

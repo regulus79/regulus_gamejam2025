@@ -187,6 +187,14 @@ local special_nodes = {
 		name = "tf_npcs:spawner_rock",
 		pos = backyardforest_center + vector.new(0, 1, 0),
 	},
+	{ -- Tree in redforest
+		name = "tf_npcs:spawner_tree",
+		pos = redforest_center + vector.new(0, 1, 0),
+	},
+	{ -- Thistle in drygrassland
+		name = "tf_npcs:spawner_thistle",
+		pos = drygrassland_center + vector.new(0, 1, 0),
+	},
 	{ -- Mound near fireflyforest
 		name = "tf_npcs:spawner_npc2",
 		pos = in_front_of_fireflyforest + vector.new(0, 1, 0),

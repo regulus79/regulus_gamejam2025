@@ -216,6 +216,74 @@ tf_dialogue.dialogues["rock_idle2"] = {
 
 
 
+
+--- Tree in redforest
+tf_npcs.npcs["tree"] = {
+	_notice_distance = 20,
+	_notice_rate = 0.95,
+	_turn_on_rightclick = true,
+	get_next_dialogue = function(self, player)
+		if not tf_dialogue.had_dialogue(player, "tree_talk1") then
+			return "tree_talk1", true
+		else
+			return "tree_idle1", false
+		end
+	end,
+}
+tf_dialogue.dialogues["tree_talk1"] = {
+	{text = "who are you"},
+	{text = "why do you come here"},
+	{text = "this land is dark and red"},
+	{text = "strange things happen here"},
+	{text = "my roots feel it"},
+	{text = "a tremor"},
+	{text = "a tingling"},
+	{text = "I cannot describe it"},
+	{text = "something is coming"},
+}
+tf_dialogue.dialogues["tree_idle1"] = {
+	{text = "this feeling"},
+	{text = "I cannot describe it"},
+}
+
+
+
+
+--- Bush/grass/thistle thing in drygrassland
+tf_npcs.npcs["thistle"] = {
+	_notice_distance = 20,
+	_notice_rate = 0.95,
+	_turn_on_rightclick = true,
+	get_next_dialogue = function(self, player)
+		if not tf_dialogue.had_dialogue(player, "thistle_talk1") then
+			return "thistle_talk1", true
+		else
+			return "thistle_idle1", false
+		end
+	end,
+}
+tf_dialogue.dialogues["thistle_talk1"] = {
+	{text = "have you ever seen so many clouds?"},
+	{text = "it makes me think of rain"},
+	{text = "ahhhh rain..."},
+	{text = "i have never felt rain in a very long time"},
+	{text = "the water of the dew is what keeps us alive"},
+	{text = "every morning it nourishes us"},
+	{text = "until the rain comes again"},
+	{text = "someday"},
+}
+tf_dialogue.dialogues["thistle_idle1"] = {
+	{text = "rain...."},
+	{text = "what a beautiful word"},
+}
+
+
+
+
+
+
+
+
 -- Mound in front of spawn
 tf_npcs.npcs["npc5"] = {
 	_notice_distance = 20,
