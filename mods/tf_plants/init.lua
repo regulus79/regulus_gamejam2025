@@ -244,7 +244,7 @@ for plantid, plantdef in pairs(tf_plants.plantdefs) do
 		end
 	end
 end
-math.randomseed()
+math.randomseed(os.time())
 
 
 
